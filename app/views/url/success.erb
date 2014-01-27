@@ -1,0 +1,14 @@
+<h2>Your url was shorten successfully</h2>
+
+<form class="pure-form">
+    <h3>Click to copy: <input type="text" id="ref_url" data-clipboard-text="<%= @ref_url %>" value="<%= @ref_url %>" readonly></h3>
+</form>
+<script>
+    $(document).ready(function() {
+        $("#ref_url").on('click', function() {
+            $('h3').append(' copied!');
+            alert('wah');
+        });
+        var clip = new ZeroClipboard($("#ref_url"));
+    });
+</script>
