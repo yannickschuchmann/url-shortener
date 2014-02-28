@@ -2,6 +2,9 @@ class Url < ActiveRecord::Base
   validates :ref, presence: true
   validates :key, uniqueness: true
 
+  has_many :clicks
+  belongs_to :user
+
   before_create :set_key
   before_save :add_http
 

@@ -1,16 +1,16 @@
-<%= form_for :url, :html => {:class => 'pure-form'} ,url: url_index_path do |f| %>
+<%= form_for :urls, :html => {:class => 'pure-form'} , urls: urls_path do |f| %>
     <fieldset>
         <legend>Create your tiny URL!</legend>
         <% if @url and @url.errors.any? %>
             <div id="error_explanation">
                 <h2><%= pluralize(@url.errors.count, "error") %> prohibited
-                this url from being saved:</h2>
+                    this url from being saved:</h2>
                 <ul>
-                <% @url.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-        <% end %>
+                    <% @url.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
                 </ul>
-                </div>
+            </div>
         <% end %>
 
         <%= f.text_field :ref, :placeholder => "http://" %>

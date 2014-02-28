@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url_id: 
+  referrer: 
+  ip: 
+  location: MyString
+
+two:
+  url_id: 
+  referrer: 
+  ip: 
+  location: MyString

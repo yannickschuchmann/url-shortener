@@ -6,9 +6,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: tiny_development
+  database: shortly_dev
   pool: 5
-  username: tiny
+  username: dev
   password: 123
   host: localhost
 

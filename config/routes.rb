@@ -1,15 +1,23 @@
 Tiny::Application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root :to => 'sites#index'
 
   # Example of regular route:
-  get '/' => 'url#new'
-  get '/url' => 'url#new'
-  get '/:key' => 'url#show'
-  resources :url
+  get '/url' => 'urls#new'
+  get '/:key' => 'urls#show'
+  resources :urls
+  resources :sites
+
+  #devise_for :users, :skip => [:registrations]
+  #as :user do
+  #  get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
+  #  put 'users/:id' => 'devise/registrations#update', :as => 'user_registration'
+  #end
+  resources :users
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
