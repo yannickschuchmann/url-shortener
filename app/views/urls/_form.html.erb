@@ -1,4 +1,4 @@
-<%= form_for :urls, :html => {:class => 'pure-form'} , urls: urls_path do |f| %>
+<%= form_for @url, :html => {:class => 'pure-form'} do |f| %>
     <fieldset>
         <legend>Create your tiny URL!</legend>
         <% if @url and @url.errors.any? %>
@@ -12,7 +12,7 @@
                 </ul>
             </div>
         <% end %>
-
+        <%= f.hidden_field :user_id, value: if current_user then current_user.id end %>
         <%= f.text_field :ref, :placeholder => "http://" %>
         <%= content_tag :button, :type => :submit, :class => 'pure-button pure-button-primary' do %>
             Generate

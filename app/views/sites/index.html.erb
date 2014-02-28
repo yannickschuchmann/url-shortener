@@ -1,4 +1,12 @@
 <p>
 <%= notice %>
 </p>
+
 <%= render "/urls/form" %>
+
+<% if current_user %>
+    <%= link_to "Adminpanel" %>
+    <%= link_to "Loggout", destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= render "/shared/login" %>
+<% end %>

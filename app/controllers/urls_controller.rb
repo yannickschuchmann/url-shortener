@@ -15,7 +15,7 @@ class UrlsController < ApplicationController
   end
 
   def create
-    @url = Url.new(params[:urls].permit(:ref))
+    @url = Url.new(params_user)
     if @url.save
       @ref_url = @url.get_url request
       render 'success'
@@ -29,4 +29,8 @@ class UrlsController < ApplicationController
  def set_url
    @url = Url.find_by_key(params[:key])
  end
+
+  def params_user
+    params[:url].permit(:ref, :user_id)
+  end
 end
