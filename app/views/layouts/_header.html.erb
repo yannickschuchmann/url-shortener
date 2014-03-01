@@ -1,0 +1,23 @@
+<div id="header" class="fixed">
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="/">
+                    murl.<span>ml</span>
+                </a></h1>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="nav right">
+                <% if current_user.nil? %>
+                    <li><%= link_to "Register", new_user_registration_path %></li>
+                    <li><%= link_to "Login", new_user_session_path %></li>
+                <% elsif controller_name == "sites" %>
+                    <li><%= link_to "My Account", member_urls_path %></li>
+                <% else %>
+                    <li style="margin-right: 10px; font-size: 12px; color: #ddd; line-height: 45px; float: left"><%= current_user.email unless current_user.nil? %></li>
+                <% end %>
+            </ul>
+        </section>
+    </nav>
+</div>

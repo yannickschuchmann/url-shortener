@@ -1,0 +1,24 @@
+<div class="small-12 medium-9 column">
+    <fieldset>
+        <legend>My URLs</legend>
+        <table class="small-12">
+            <tr>
+                <th>Key</th>
+                <th>Reference</th>
+                <th>Clicks</th>
+                <th>Created at</th>
+            </tr>
+            <% @urls.each do |url| %>
+                <tr>
+                    <td><%= url.key %></td>
+                    <td><%= url.ref %></td>
+                    <td><%= url.clicks.size %></td>
+                    <td><%= url.created_at %></td>
+                </tr>
+            <% end %>
+        </table>
+    </fieldset>
+</div>
+<div class="small-12 medium-3 column">
+    <%= render "/urls/form" %>
+</div>

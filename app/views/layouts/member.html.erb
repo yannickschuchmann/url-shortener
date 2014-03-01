@@ -14,7 +14,16 @@
   <body>
     <div class="container">
         <%= render "layouts/header" %>
-        <%= yield %>
+        <div class="row">
+            <div class="small-2 left column">
+                <div class="sidebar small-2">
+                    <%= render "layouts/member/sidebar" %>
+                </div>
+            </div>
+            <div class="small-10 right column">
+                <%= yield %>
+            </div>
+        </div>
     </div>
     <%= javascript_include_tag "application" %>
   </body>

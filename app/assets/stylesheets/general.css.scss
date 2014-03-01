@@ -1,0 +1,49 @@
+@import "base";
+
+
+#header {
+  .title-area {
+    background: #fff;
+    margin-right: 10px;
+    h1 a {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: $color-deco2!important;
+    }
+    span {
+      color: $color-deco1;
+    }
+  }
+}
+.row {
+  max-width: 100%!important;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 45px;
+  background: #333;
+  color: #fff;
+  ul {
+    margin: 0;
+  }
+  li {
+    list-style-type: none;
+    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #999;
+    a {
+      padding: 10px 10px;
+      box-sizing: border-box;
+      display: block;
+      color: #fff;
+      &:hover {
+        background: #fff;
+        color: $color-deco1;
+      }
+    }
+  }
+}
