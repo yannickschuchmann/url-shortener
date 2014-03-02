@@ -9,7 +9,8 @@ class Url < ActiveRecord::Base
   before_save :add_http
 
   def get_url request
-    request.protocol.to_s+request.host.to_s+':'+request.port.to_s+'/'+self.key
+    #request.protocol.to_s+request.host.to_s+':'+request.port.to_s+'/'+self.key
+    request.protocol.to_s+request.host.to_s+'/'+self.key
   end
 
   private
