@@ -5,7 +5,10 @@ gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
-gem 'sqlite3'
+
+group :development do
+  gem 'sqlite3'
+end
 
 gem 'zeroclipboard-rails'
 
