@@ -2,9 +2,8 @@ class UrlsController < ApplicationController
   before_filter :set_url, except: [:new, :create]
 
   def show
-    # referrer, ip address, location
-    @url.click_ids = @url.click_ids + [Click.create().id]
-    #redirect_to @url.ref
+    @url.click_ids = @url.click_ids + [Click.create(referrer: request.referrer, ip: request.remote_ip).id]
+    redirect_to @url.ref
   end
 
   def to_param
@@ -18,6 +17,7 @@ class UrlsController < ApplicationController
     @url = Url.new(params_user)
     if @url.save
       @ref_url = @url.get_url request
+      flash[:notice] = "Your url was shorten successfully"
       render 'success'
     else
       render 'new'

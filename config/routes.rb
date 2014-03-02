@@ -9,6 +9,7 @@ Tiny::Application.routes.draw do
   namespace :member do
    # Directs /admin/products/* to Admin::ProductsController
    # (app/controllers/admin/products_controller.rb)
+   get '/urls/:key' => 'urls#show', as: 'url'
    resources :urls
   end
 

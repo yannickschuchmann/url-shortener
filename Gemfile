@@ -36,6 +36,11 @@ end
 
 gem 'devise'
 
+gem 'groupdate'
+gem 'chartkick'
+
+#gem 'geocoder' later
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -46,4 +51,4 @@ gem 'devise'
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]

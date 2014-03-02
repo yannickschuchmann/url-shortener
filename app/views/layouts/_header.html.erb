@@ -3,6 +3,7 @@
         <ul class="title-area">
             <li class="name">
                 <h1><a href="/">
+                    <img src="/murly.png" style="width: 50px" alt=""/>
                     murl.<span>ml</span>
                 </a></h1>
             </li>
@@ -10,12 +11,18 @@
         <section class="top-bar-section">
             <ul class="nav right">
                 <% if current_user.nil? %>
-                    <li><%= link_to "Register", new_user_registration_path %></li>
-                    <li><%= link_to "Login", new_user_session_path %></li>
-                <% elsif controller_name == "sites" %>
-                    <li><%= link_to "My Account", member_urls_path %></li>
+                    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+                    <li>
+                        <%= f.email_field :email, :autofocus => true, :placeholder => 'E-Mail' %>
+                    </li>
+                    <li>
+                        <%= f.password_field :password, :placeholder => 'Password' %>
+                    </li>
+                    <li><%= f.submit "Sign in", class: "button right tiny" %></li>
+                    <% end %>
                 <% else %>
                     <li style="margin-right: 10px; font-size: 12px; color: #ddd; line-height: 45px; float: left"><%= current_user.email unless current_user.nil? %></li>
+                    <li><%= link_to "My Account", member_urls_path %></li>
                 <% end %>
             </ul>
         </section>

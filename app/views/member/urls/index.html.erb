@@ -10,7 +10,7 @@
             </tr>
             <% @urls.each do |url| %>
                 <tr>
-                    <td><%= url.key %></td>
+                    <td><%= link_to url.key, member_url_path(url.key) %></td>
                     <td><%= url.ref %></td>
                     <td><%= url.clicks.size %></td>
                     <td><%= url.created_at %></td>

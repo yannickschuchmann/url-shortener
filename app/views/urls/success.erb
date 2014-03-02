@@ -1,8 +1,11 @@
-<h2>Your url was shorten successfully</h2>
-
-<form class="pure-form">
-    <h3>
-        Click to copy:
-        <input type="text" value="<%= @ref_url %>"/>
-    </h3>
-</form>
+<div class="row">
+    <div class="small-12 medium-8 medium-centered column">
+        <h3 class="text-center">
+           <%= @ref_url %>
+        </h3>
+        <br/>
+        <div class="text-center">
+            <%= link_to "Back", root_path, class: "button tiny" %>
+        </div>
+    </div>
+</div>

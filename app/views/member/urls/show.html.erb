@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="small-12 medium-10 medium-centered column">
+        <div class="row">
+            <div class="small-12 column">
+                <fieldset>
+                    <legend>General information</legend>
+                    <div class="left"><%= @url.ref %></div>
+                    <div class="right"><%= @url.clicks.size %> Clicks</div>
+                </fieldset>
+            </div>
+            <div class="small-12 medium-6 column">
+                <fieldset>
+                    <legend>Referrer</legend>
+                    <% Click.all.group("referrer").having("url_id = ?", @url.id).each do |click| %>
+                        <div><%= click.referrer %></div>
+                    <% end %>
+                </fieldset>
+            </div>
+            <div class="small-12 medium-6 column">
+                <fieldset>
+                    <legend>Country</legend>
+                    Remote IP-addresses will be saved already. Viewing feature is currently in development
+                </fieldset>
+            </div>
+            <div class="small-12 column">
+                <%= line_chart Click.group("date(created_at)").having("url_id = ?", @url.id).size %>
+            </div>
+        </div>
+    </div>
+</div>

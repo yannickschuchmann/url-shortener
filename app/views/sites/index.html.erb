@@ -1,20 +1,17 @@
 <div class="row">
-    <div class="small-12 notice alert">
-    <%= notice %>
+    <div class="small-8 small-centered column">
+        <div class="row">
+            <div class="small-6 column">
+                <%= render "/urls/form" %>
+            </div>
+            <div class="small-6 column">
+                <% if current_user %>
+                    <%= link_to "Adminpanel" %>
+                    <%= link_to "Loggout", destroy_user_session_path, method: :delete %>
+                <% else %>
+                    <%= render "/shared/create_account" %>
+                <% end %>
+            </div>
+        </div>
     </div>
 </div>
-
-<div class="row">
-    <div class="small-6 column">
-        <%= render "/urls/form" %>
-    </div>
-    <div class="small-6 column">
-        <% if current_user %>
-            <%= link_to "Adminpanel" %>
-            <%= link_to "Loggout", destroy_user_session_path, method: :delete %>
-        <% else %>
-            <%= render "/shared/login" %>
-        <% end %>
-    </div>
-</div>
-

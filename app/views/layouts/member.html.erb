@@ -7,6 +7,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
@@ -21,6 +22,12 @@
                 </div>
             </div>
             <div class="small-10 right column">
+                <% if notice %>
+                    <div data-alert class="alert-box success column">
+                        <%= notice %>
+                        <a href="#" class="close">&times;</a>
+                    </div>
+                <% end %>
                 <%= yield %>
             </div>
         </div>

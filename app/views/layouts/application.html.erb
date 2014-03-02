@@ -14,6 +14,22 @@
   <body>
     <div class="container">
         <%= render "layouts/header" %>
+        <% if notice %>
+        <div class="row">
+            <div data-alert class="alert-box success column small-12">
+                <%= notice %>
+                <a href="#" class="close">&times;</a>
+            </div>
+        </div>
+        <% end %>
+        <% if alert %>
+            <div class="row">
+                <div data-alert class="alert-box warning column small-12">
+                    <%= alert %>
+                    <a href="#" class="close">&times;</a>
+                </div>
+            </div>
+        <% end %>
         <%= yield %>
     </div>
     <%= javascript_include_tag "application" %>
